@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google" content="notranslate" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png?v=2">
+    <link rel="stylesheet" href="../assets/css/product-style.css" />
+    <script src="../assets/js/translations.js"></script>
+    <script src="../assets/js/language.js"></script>
+    <script src="../assets/js/language-selector-loader.js"></script>
+    <script src="../assets/js/header-loader.js"></script>
+    <script src="../assets/js/footer-loader.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <title>Smart Drip Irrigation Mechanism</title>
+  </head>
+
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main>
+      <h1 class="product-title" data-i18n="dripIrrigationTitle">Smart Drip Irrigation Mechanism</h1>
+
+      <div class="product-container">
+        <div class="render-box">
+          <model-viewer 
+            src="../models/drip irrigation sprinkler 3d model.glb" 
+            alt="Drip Irrigation Sprinkler 3D Model" 
+            auto-rotate 
+            camera-controls 
+            shadow-intensity="1"
+            style="width: 100%; height: 100%;">
+          </model-viewer>
+        </div>
+
+        <div class="drip-dashboard-container">
+          <div class="moisture-status-card">
+            <h3 class="moisture-card-title" data-i18n="moistureStatusTitle">Current Soil Moisture & Irrigation Status</h3>
+            
+            <div class="moisture-gauge-container">
+              <svg class="moisture-gauge" viewBox="0 0 200 200">
+                <circle class="gauge-bg" cx="100" cy="100" r="80" />
+                <circle class="gauge-progress" id="moistureProgress" cx="100" cy="100" r="80" />
+              </svg>
+              <div class="gauge-center">
+                <div class="moisture-value" id="moistureValue">72%</div>
+                <i class="fa-solid fa-droplet moisture-icon" id="moistureIcon"></i>
+              </div>
+            </div>
+            
+            <div class="moisture-status-text">
+              <h4 class="status-label" id="statusLabel" data-i18n="statusOptimal">Optimal - No Action Needed</h4>
+              <p class="status-recommendation" id="statusRecommendation" data-i18n="statusRecommendation">Your soil moisture is ideal for plant health.</p>
+            </div>
+
+            <div class="nutrient-alert" id="nutrientAlert" style="display: none;">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <div class="alert-content">
+                <strong data-i18n="nutrientWarning">Nutrient Warning:</strong>
+                <span id="nutrientAlertText" data-i18n="nutrientAlertText">Current low moisture is hindering plant nutrient uptake. Water soon to ensure nutrient availability.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="water-savings-card">
+            <h3 class="savings-card-title" data-i18n="waterUsageTitle">Water Usage & Efficiency</h3>
+            
+            <div class="savings-main-metric">
+              <i class="fa-solid fa-droplet savings-icon"></i>
+              <div class="savings-value-container">
+                <div class="savings-label" data-i18n="waterSavedLabel">Water Saved This Month</div>
+                <div class="savings-value" id="waterSaved" data-i18n="waterSavedValue">1,250 Liters</div>
+                <div class="savings-percentage">
+                  <i class="fa-solid fa-arrow-trend-up"></i>
+                  <span id="savingsPercent" data-i18n="savingsPercent">(15% Savings)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="next-watering">
+              <i class="fa-solid fa-clock"></i>
+              <span><span data-i18n="nextWatering">Next Watering: Estimated in</span> <strong id="nextWateringTime">10 Hours</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="et-index-card">
+          <h3 class="et-card-title">
+            <i class="fa-solid fa-sun-plant-wilt"></i>
+            <span data-i18n="etIndexTitle">Evapotranspiration Index</span>
+          </h3>
+          
+          <div class="et-main-display">
+            <div class="et-value-container">
+              <div class="et-index-value">
+                <span id="etIndexValue">5</span><span class="et-max">/10</span>
+              </div>
+              <div class="et-level" id="etLevel" data-i18n="etModerate">Moderate</div>
+            </div>
+            
+            <div class="et-bar-container">
+              <div class="et-bar-bg">
+                <div class="et-bar-progress" id="etProgressBar"></div>
+              </div>
+              <div class="et-bar-labels">
+                <span data-i18n="etLow">Low</span>
+                <span data-i18n="etModerate">Moderate</span>
+                <span data-i18n="etHigh">High</span>
+                <span data-i18n="etSevere">Severe</span>
+              </div>
+            </div>
+          </div>
+          
+          <p class="et-description" id="etDescription">
+            Normal moisture loss due to temperature and plant activity.
+          </p>
+          
+          <div class="et-metric">
+            <i class="fa-solid fa-droplet"></i>
+            <span><span data-i18n="moistureLossRate">Moisture Loss Rate:</span> <strong id="etMmPerDay">4.0</strong> mm/day</span>
+          </div>
+        </div>
+
+        <div class="info-blocks-wrapper">
+          <div class="info-card description-block">
+            <h3 data-i18n="dripDescTitle">Every Drop Counts.</h3>
+            <p data-i18n="dripDescText">
+              An intelligent drip irrigation system that automatically detects dry zones and supplies precise amounts of water only where needed. This ensures optimal hydration while minimizing water waste — perfect for eco-friendly farming.
+            </p>
+            <p class="tagline" data-i18n="dripDescTagline">Every Drop Counts.</p>            
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+      const soilWHC = {
+        'Alluvial Soil': 0.9,
+        'Black Soil': 0.85,
+        'Red & Yellow Soil': 0.4,
+        'Laterite Soil': 0.35,
+        'Arid/Desert Soil': 0.2,
+        'Forest/Mountain Soil': 0.6
+      };
+
+      let globalETIndex = 0;
+
+      function generateETIndex() {
+        const season = Math.random();
+        if (season < 0.25) return Math.floor(Math.random() * 3) + 1;
+        else if (season < 0.5) return Math.floor(Math.random() * 3) + 4;
+        else if (season < 0.75) return Math.floor(Math.random() * 2) + 7;
+        else return Math.floor(Math.random() * 2) + 9;
+      }
+
+      function getETStatus(etIndex) {
+        if (etIndex <= 3) {
+          return { level: 'Low', color: '#2e7d32', description: 'Minimal moisture loss. Soil retains water well.' };
+        } else if (etIndex <= 6) {
+          return { level: 'Moderate', color: '#f57c00', description: 'Normal moisture loss due to temperature and plant activity.' };
+        } else if (etIndex <= 8) {
+          return { level: 'High', color: '#e65100', description: 'Soil is losing moisture rapidly due to heat and evaporation.' };
+        } else {
+          return { level: 'Severe', color: '#d32f2f', description: 'Critical moisture loss! Frequent irrigation required.' };
+        }
+      }
+
+      function etIndexToMmPerDay(etIndex) {
+        return 0.5 + (etIndex * 0.75);
+      }
+
+      function calculateMoistureFromSoil(composition, etIndex) {
+        let baseWHC = 0;
+        
+        composition.forEach(item => {
+          const whcFactor = soilWHC[item.type] || 0.5;
+          baseWHC += (item.percentage / 100) * whcFactor;
+        });
+        
+        // More balanced distribution
+        const moistureRange = Math.random();
+        let targetMoisture;
+        
+        if (moistureRange < 0.25) {
+          // 25% chance: Low moisture (20-40%)
+          targetMoisture = 20 + Math.random() * 20;
+        } else if (moistureRange < 0.55) {
+          // 30% chance: Medium-low (40-60%)
+          targetMoisture = 40 + Math.random() * 20;
+        } else if (moistureRange < 0.85) {
+          // 30% chance: Optimal (60-80%)
+          targetMoisture = 60 + Math.random() * 20;
+        } else {
+          // 15% chance: High (80-95%)
+          targetMoisture = 80 + Math.random() * 15;
+        }
+        
+        // Adjust based on soil WHC (better soil = higher moisture tendency)
+        const whcAdjustment = (baseWHC - 0.5) * 20;
+        targetMoisture += whcAdjustment;
+        
+        // Adjust based on ET Index (higher ET = lower moisture tendency)
+        const etAdjustment = (etIndex - 5.5) * -3;
+        targetMoisture += etAdjustment;
+        
+        // Add some randomness
+        const randomVariation = (Math.random() - 0.5) * 10;
+        targetMoisture += randomVariation;
+        
+        // Clamp to valid range
+        targetMoisture = Math.max(15, Math.min(92, targetMoisture));
+        
+        return Math.floor(targetMoisture);
+      }
+
+      function calculateNutrientHealth(moisture, composition, pH, etIndex) {
+        let baseNutrientScore = 100;
+        
+        if (moisture < 20) {
+          baseNutrientScore -= 60;
+        } else if (moisture < 40) {
+          baseNutrientScore -= 30;
+        } else if (moisture < 60) {
+          baseNutrientScore -= 15;
+        }
+        
+        let soilNutrientPenalty = 0;
+        composition.forEach(item => {
+          if (item.type === 'Red & Yellow Soil') {
+            soilNutrientPenalty += (item.percentage / 100) * 25;
+          } else if (item.type === 'Arid/Desert Soil') {
+            soilNutrientPenalty += (item.percentage / 100) * 35;
+          } else if (item.type === 'Laterite Soil') {
+            soilNutrientPenalty += (item.percentage / 100) * 30;
+          } else if (item.type === 'Alluvial Soil') {
+            soilNutrientPenalty += (item.percentage / 100) * 5;
+          }
+        });
+        baseNutrientScore -= soilNutrientPenalty;
+        
+        if (pH < 5.5) {
+          baseNutrientScore -= 20;
+        } else if (pH > 7.5) {
+          baseNutrientScore -= 25;
+        }
+        
+        if (etIndex >= 7) {
+          baseNutrientScore -= (etIndex - 6) * 5;
+        }
+        
+        return Math.max(0, Math.min(100, baseNutrientScore));
+      }
+
+      function generateNutrientAlert(moisture, composition, pH, nutrientScore) {
+        if (nutrientScore >= 70) {
+          return { show: false, message: '' };
+        }
+        
+        let issues = [];
+        
+        if (moisture < 20) {
+          issues.push(`Severe moisture deficit (${moisture}%) is blocking nutrient uptake`);
+        } else if (moisture < 40) {
+          issues.push(`Low moisture (${moisture}%) is reducing nutrient availability`);
+        } else if (moisture < 60) {
+          issues.push(`Moderate moisture (${moisture}%) is limiting nutrient transport`);
+        }
+        
+        let dominantSoil = composition.reduce((max, item) => 
+          item.percentage > max.percentage ? item : max
+        );
+        
+        if (dominantSoil.type === 'Red & Yellow Soil') {
+          issues.push('Red soil is naturally deficient in Nitrogen and Phosphorus');
+        } else if (dominantSoil.type === 'Arid/Desert Soil') {
+          issues.push('Arid soil has extremely low organic matter and nutrients');
+        } else if (dominantSoil.type === 'Laterite Soil') {
+          issues.push('Laterite soil is poor in Nitrogen, Potash, and Lime');
+        }
+        
+        if (pH < 5.5) {
+          issues.push(`Acidic pH (${pH}) is causing nutrient lockout`);
+        } else if (pH > 7.5) {
+          issues.push(`Alkaline pH (${pH}) is limiting micronutrient availability (Iron, Zinc)`);
+        }
+        
+        let severity = nutrientScore < 40 ? 'Critical' : nutrientScore < 55 ? 'High' : 'Moderate';
+        let message = `<strong>${severity} Nutrient Warning:</strong> ${issues.join('. ')}.`;
+        
+        return { show: true, message: message };
+      }
+
+      function getMoistureStatus(moisture) {
+        if (moisture <= 30) {
+          return {
+            status: 'Critical Dryness! - Water Immediately',
+            recommendation: 'Immediate watering is required to prevent plant stress.',
+            color: '#d32f2f',
+            icon: 'fa-droplet-slash'
+          };
+        } else if (moisture <= 59) {
+          return {
+            status: 'Low Moisture - Recommend Watering',
+            recommendation: 'Consider a short irrigation cycle soon.',
+            color: '#f57c00',
+            icon: 'fa-droplet'
+          };
+        } else if (moisture <= 80) {
+          return {
+            status: 'Optimal - No Action Needed',
+            recommendation: 'Your soil moisture is ideal for plant health.',
+            color: '#2e7d32',
+            icon: 'fa-droplet'
+          };
+        } else {
+          return {
+            status: 'Saturated - Stop Watering',
+            recommendation: 'Monitor for drainage; consider pausing automated cycles.',
+            color: '#0277bd',
+            icon: 'fa-water'
+          };
+        }
+      }
+
+      function updateMoistureGauge(moisture, composition, pH) {
+        const statusData = getMoistureStatus(moisture);
+        const circumference = 2 * Math.PI * 80;
+        const offset = circumference - (moisture / 100) * circumference;
+        
+        document.getElementById('moistureValue').textContent = moisture + '%';
+        document.getElementById('statusLabel').textContent = statusData.status;
+        document.getElementById('statusRecommendation').textContent = statusData.recommendation;
+        
+        const progressCircle = document.getElementById('moistureProgress');
+        progressCircle.style.strokeDashoffset = offset;
+        progressCircle.style.stroke = statusData.color;
+        
+        const statusLabel = document.getElementById('statusLabel');
+        statusLabel.style.color = statusData.color;
+        
+        const icon = document.getElementById('moistureIcon');
+        icon.className = 'fa-solid ' + statusData.icon + ' moisture-icon';
+        icon.style.color = statusData.color;
+
+        const nutrientScore = calculateNutrientHealth(moisture, composition, pH);
+        const nutrientAlertData = generateNutrientAlert(moisture, composition, pH, nutrientScore);
+        
+        const nutrientAlert = document.getElementById('nutrientAlert');
+        if (nutrientAlertData.show) {
+          nutrientAlert.style.display = 'flex';
+          document.getElementById('nutrientAlertText').innerHTML = nutrientAlertData.message;
+        } else {
+          nutrientAlert.style.display = 'none';
+        }
+      }
+
+      function calculateWaterEfficiency(moisture, composition, etIndex) {
+        let avgWHC = 0;
+        composition.forEach(item => {
+          avgWHC += (item.percentage / 100) * soilWHC[item.type];
+        });
+        
+        let baseEfficiency = avgWHC * 100;
+        
+        let moistureImpact = 0;
+        if (moisture < 30) {
+          moistureImpact = -40;
+        } else if (moisture < 60) {
+          moistureImpact = -15;
+        } else if (moisture <= 80) {
+          moistureImpact = 10;
+        } else {
+          moistureImpact = -5;
+        }
+        
+        let etImpact = 0;
+        if (etIndex >= 7) {
+          etImpact = -(etIndex - 6) * 8;
+        } else if (etIndex <= 3) {
+          etImpact = (4 - etIndex) * 5;
+        }
+        
+        let efficiency = baseEfficiency + moistureImpact + etImpact;
+        efficiency = Math.max(0, Math.min(100, efficiency));
+        
+        return {
+          efficiency: efficiency,
+          avgWHC: avgWHC
+        };
+      }
+
+      function updateWaterSavings(moisture, composition, etIndex) {
+        const efficiencyData = calculateWaterEfficiency(moisture, composition, etIndex);
+        const efficiency = efficiencyData.efficiency;
+        const avgWHC = efficiencyData.avgWHC;
+        const etMmPerDay = etIndexToMmPerDay(etIndex);
+        const etMultiplier = 1 + (etMmPerDay / 10);
+        
+        let baseLiters = 2500;
+        let savingsPercent = 0;
+        let litersSaved = 0;
+        let nextWateringText = '';
+        let nextWateringHours = 0;
+        
+        if (moisture < 30) {
+          savingsPercent = Math.floor(efficiency * 0.1);
+          litersSaved = Math.floor(baseLiters * (savingsPercent / 100));
+          nextWateringHours = 0;
+          nextWateringText = '<strong style="color: #d32f2f;">IMMEDIATE</strong> (Critical)';
+        } else if (moisture < 60) {
+          savingsPercent = Math.floor(efficiency * 0.3);
+          litersSaved = Math.floor(baseLiters * (savingsPercent / 100));
+          nextWateringHours = Math.floor((3 + (avgWHC * 5)) / etMultiplier);
+          nextWateringText = `<strong>${nextWateringHours} Hours</strong> (Low moisture)`;
+        } else if (moisture <= 80) {
+          savingsPercent = Math.floor(efficiency * 0.5);
+          litersSaved = Math.floor(baseLiters * (savingsPercent / 100));
+          nextWateringHours = Math.floor((12 + (avgWHC * 18)) / etMultiplier);
+          nextWateringText = `<strong>${nextWateringHours} Hours</strong> (Optimal)`;
+        } else {
+          savingsPercent = Math.floor(efficiency * 0.2);
+          litersSaved = Math.floor(baseLiters * (savingsPercent / 100));
+          nextWateringHours = Math.floor((24 + (avgWHC * 24)) / etMultiplier);
+          nextWateringText = `<strong>${nextWateringHours} Hours</strong> (Saturated)`;
+        }
+        
+        document.getElementById('waterSaved').textContent = litersSaved.toLocaleString() + ' Liters';
+        document.getElementById('savingsPercent').textContent = `(${savingsPercent}% Savings)`;
+        document.getElementById('nextWateringTime').innerHTML = nextWateringText;
+      }
+
+      let globalSoilComposition = [];
+
+      function generateSoilComposition() {
+        const allTypes = Object.keys(soilWHC);
+        const numTypes = Math.floor(Math.random() * 2) + 3;
+        const selectedTypes = allTypes.sort(() => 0.5 - Math.random()).slice(0, numTypes);
+        
+        let percentages = [];
+        let remaining = 100;
+        
+        for (let i = 0; i < selectedTypes.length - 1; i++) {
+          const max = remaining - (selectedTypes.length - i - 1) * 10;
+          const min = 15;
+          const value = Math.floor(Math.random() * (max - min + 1)) + min;
+          percentages.push(value);
+          remaining -= value;
+        }
+        percentages.push(remaining);
+        
+        return selectedTypes.map((type, i) => ({
+          type: type,
+          percentage: percentages[i]
+        }));
+      }
+
+      function updateMoistureGauge(moisture, composition, pH, etIndex) {
+        const statusData = getMoistureStatus(moisture);
+        const circumference = 2 * Math.PI * 80;
+        const offset = circumference - (moisture / 100) * circumference;
+        
+        document.getElementById('moistureValue').textContent = moisture + '%';
+        document.getElementById('statusLabel').textContent = statusData.status;
+        document.getElementById('statusRecommendation').textContent = statusData.recommendation;
+        
+        const progressCircle = document.getElementById('moistureProgress');
+        progressCircle.style.strokeDashoffset = offset;
+        progressCircle.style.stroke = statusData.color;
+        
+        const statusLabel = document.getElementById('statusLabel');
+        statusLabel.style.color = statusData.color;
+        
+        const icon = document.getElementById('moistureIcon');
+        icon.className = 'fa-solid ' + statusData.icon + ' moisture-icon';
+        icon.style.color = statusData.color;
+
+        const nutrientScore = calculateNutrientHealth(moisture, composition, pH, etIndex);
+        const nutrientAlertData = generateNutrientAlert(moisture, composition, pH, nutrientScore);
+        
+        const nutrientAlert = document.getElementById('nutrientAlert');
+        if (nutrientAlertData.show) {
+          nutrientAlert.style.display = 'flex';
+          document.getElementById('nutrientAlertText').innerHTML = nutrientAlertData.message;
+        } else {
+          nutrientAlert.style.display = 'none';
+        }
+      }
+
+      function updateETCard(etIndex) {
+        const etStatus = getETStatus(etIndex);
+        const etMmPerDay = etIndexToMmPerDay(etIndex);
+        const percentage = (etIndex / 10) * 100;
+        
+        document.getElementById('etIndexValue').textContent = etIndex;
+        document.getElementById('etLevel').textContent = etStatus.level;
+        document.getElementById('etLevel').style.color = etStatus.color;
+        document.getElementById('etDescription').textContent = etStatus.description;
+        document.getElementById('etMmPerDay').textContent = etMmPerDay.toFixed(1);
+        
+        const etBar = document.getElementById('etProgressBar');
+        etBar.style.width = percentage + '%';
+        etBar.style.background = `linear-gradient(90deg, #2e7d32 0%, ${etStatus.color} 100%)`;
+      }
+
+      window.addEventListener('load', function() {
+        globalSoilComposition = generateSoilComposition();
+        globalETIndex = generateETIndex();
+        
+        const moisture = calculateMoistureFromSoil(globalSoilComposition, globalETIndex);
+        const pH = (Math.random() * 4.5 + 4.5).toFixed(1);
+        
+        updateMoistureGauge(moisture, globalSoilComposition, pH, globalETIndex);
+        updateWaterSavings(moisture, globalSoilComposition, globalETIndex);
+        updateETCard(globalETIndex);
+      });
+    </script>
+  </body>
+</html>

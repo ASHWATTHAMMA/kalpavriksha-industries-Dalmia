@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google" content="notranslate" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png?v=2">
+    <link rel="stylesheet" href="../assets/css/product-style.css" />
+    <script src="../assets/js/translations.js"></script>
+    <script src="../assets/js/language.js"></script>
+    <script src="../assets/js/language-selector-loader.js"></script>
+    <script src="../assets/js/header-loader.js"></script>
+    <script src="../assets/js/footer-loader.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <title>Kalpavriksha Agricultural Drone</title>
+  </head>
+
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main>
+      <h1 class="product-title" data-i18n="productTitle">Kalpavriksha Agricultural Drone</h1>
+
+      <div class="product-container">
+        <div class="render-box">
+          <model-viewer 
+            src="../models/Agriculture drone model.glb" 
+            alt="Agricultural Drone 3D Model" 
+            auto-rotate 
+            camera-controls 
+            shadow-intensity="1"
+            style="width: 100%; height: 100%;">
+          </model-viewer>
+        </div>
+
+        <!-- Analysis Cards Section -->
+        <div class="analysis-cards-container">
+          <div class="analysis-card" id="heatCard">
+            <h3 class="analysis-card-title">
+              <i class="fas fa-thermometer-half card-icon"></i>
+              <span data-i18n="heatLevel">Heat Level</span>
+            </h3>
+            <div class="analysis-card-image">
+              <img src="" alt="Heat Level Analysis" id="heatImage">
+            </div>
+            <div class="legend-bar">
+              <div class="legend-gradient legend-gradient-heat"></div>
+              <div class="legend-labels">
+                <span class="legend-label" data-i18n="legendOptimal">Optimal</span>
+                <span class="legend-label" data-i18n="legendModerate">Moderate</span>
+                <span class="legend-label" data-i18n="legendSevere">Severe</span>
+              </div>
+            </div>
+            <p class="analysis-card-description" id="heatDescription">Severe crop stress detected across large sections of the field.</p>
+            <div class="scan-details">
+              <p>Scan: 2025-11-15, 14:30</p>
+              <p>Avg. Temp: 28.5°C</p>
+            </div>
+          </div>
+
+          <div class="analysis-card" id="waterCard">
+            <h3 class="analysis-card-title">
+              <i class="fas fa-droplet card-icon"></i>
+              <span data-i18n="waterStress">Water Stress</span>
+            </h3>
+            <div class="analysis-card-image">
+              <img src="" alt="Water Stress Analysis" id="waterImage">
+            </div>
+            <div class="legend-bar">
+              <div class="legend-gradient legend-gradient-water"></div>
+              <div class="legend-labels">
+                <span class="legend-label" data-i18n="legendExcess">Excess</span>
+                <span class="legend-label" data-i18n="legendOptimal">Optimal</span>
+                <span class="legend-label" data-i18n="legendSevereStress">Severe Stress</span>
+              </div>
+            </div>
+            <p class="analysis-card-description" id="waterDescription">Water distribution appears uneven in some zones.</p>
+            <div class="scan-details">
+              <p>Scan: 2025-11-15, 14:30</p>
+              <p>Avg. Moisture: 41%</p>
+            </div>
+          </div>
+
+          <div class="analysis-card" id="diseaseCard">
+            <h3 class="analysis-card-title">
+              <i class="fas fa-virus card-icon"></i>
+              <span data-i18n="diseaseSpread">Disease Spread</span>
+            </h3>
+            <div class="analysis-card-image">
+              <img src="" alt="Disease Spread Analysis" id="diseaseImage">
+            </div>
+            <div class="legend-bar">
+              <div class="legend-gradient legend-gradient-disease"></div>
+              <div class="legend-labels">
+                <span class="legend-label" data-i18n="legendNone">None</span>
+                <span class="legend-label" data-i18n="legendModerate">Moderate</span>
+                <span class="legend-label" data-i18n="legendSevereInfection">Severe Infection</span>
+              </div>
+            </div>
+            <p class="analysis-card-description" id="diseaseDescription">Detected variations that may indicate infection spread.</p>
+            <div class="scan-details">
+              <p>Scan: 2025-11-15, 14:30</p>
+              <p>Affected Area: 12%</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weather Forecast Section -->
+        <div class="weather-forecast-section">
+          <div class="weather-header">
+            <i class="fas fa-cloud-sun weather-header-icon"></i>
+            <h3 class="weather-title" data-i18n="weatherTitle">Mumbai Weather Forecast</h3>
+            <p class="weather-subtitle" data-i18n="weatherSubtitle">Live 3-Day Automated Forecast for Your Fields</p>
+          </div>
+
+          <div class="weather-cards-container">
+            <div class="weather-card" id="day0">
+              <div class="weather-day-name">Loading...</div>
+              <i class="weather-icon fas fa-spinner fa-spin"></i>
+              <div class="weather-temp">
+                <span class="temp-high">--°C</span>
+                <span class="temp-separator">/</span>
+                <span class="temp-low">--°C</span>
+              </div>
+              <div class="weather-details">
+                <p><i class="fas fa-droplet"></i> Humidity: --%</p>
+                <p><i class="fas fa-cloud-rain"></i> Rain: --%</p>
+                <p><i class="fas fa-wind"></i> Wind: -- km/h</p>
+              </div>
+            </div>
+
+            <div class="weather-card" id="day1">
+              <div class="weather-day-name">Loading...</div>
+              <i class="weather-icon fas fa-spinner fa-spin"></i>
+              <div class="weather-temp">
+                <span class="temp-high">--°C</span>
+                <span class="temp-separator">/</span>
+                <span class="temp-low">--°C</span>
+              </div>
+              <div class="weather-details">
+                <p><i class="fas fa-droplet"></i> Humidity: --%</p>
+                <p><i class="fas fa-cloud-rain"></i> Rain: --%</p>
+                <p><i class="fas fa-wind"></i> Wind: -- km/h</p>
+              </div>
+            </div>
+
+            <div class="weather-card" id="day2">
+              <div class="weather-day-name">Loading...</div>
+              <i class="weather-icon fas fa-spinner fa-spin"></i>
+              <div class="weather-temp">
+                <span class="temp-high">--°C</span>
+                <span class="temp-separator">/</span>
+                <span class="temp-low">--°C</span>
+              </div>
+              <div class="weather-details">
+                <p><i class="fas fa-droplet"></i> Humidity: --%</p>
+                <p><i class="fas fa-cloud-rain"></i> Rain: --%</p>
+                <p><i class="fas fa-wind"></i> Wind: -- km/h</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="weather-footer">
+            <p id="lastUpdated">Last Updated: --</p>
+          </div>
+        </div>
+
+        <div class="info-blocks-wrapper">
+          <div class="info-card description-block">
+            <h3 data-i18n="descTitle">Your Farm's Eye in the Sky.</h3>
+            <p data-i18n="descText">
+              A next-generation autonomous drone for real-time crop monitoring, disease detection, and precision spraying. Equipped with AI analysis, it helps farmers identify crop health issues, manage irrigation, and forecast yield more efficiently.
+            </p>
+            <p class="tagline" data-i18n="descTagline">Your Farm's Eye in the Sky.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+      // Image data with translation keys
+      const heatData = [
+        {
+          image: '../analysis-images/heat/image 1.png',
+          descKey: 'heatDesc1'
+        },
+        {
+          image: '../analysis-images/heat/image 2.png',
+          descKey: 'heatDesc2'
+        },
+        {
+          image: '../analysis-images/heat/image 3.png',
+          descKey: 'heatDesc3'
+        }
+      ];
+
+      const waterData = [
+        {
+          image: '../analysis-images/water/image 1.png',
+          descKey: 'waterDesc1'
+        },
+        {
+          image: '../analysis-images/water/image 2.png',
+          descKey: 'waterDesc2'
+        },
+        {
+          image: '../analysis-images/water/image 3.png',
+          descKey: 'waterDesc3'
+        }
+      ];
+
+      const diseaseData = [
+        {
+          image: '../analysis-images/disease/image 1.png',
+          descKey: 'diseaseDesc1'
+        },
+        {
+          image: '../analysis-images/disease/image 2.png',
+          descKey: 'diseaseDesc2'
+        },
+        {
+          image: '../analysis-images/disease/image 3.png',
+          descKey: 'diseaseDesc3'
+        }
+      ];
+
+      // Set random images and descriptions on page load
+      // All cards display the same set number (e.g., all show image 1 or all show image 2)
+      let currentSetIndex = 0;
+
+      function updateAnalysisCards() {
+        const lang = languageManager ? languageManager.getCurrentLanguage() : 'en';
+        
+        // Apply the same set index to all three cards
+        document.getElementById('heatImage').src = heatData[currentSetIndex].image;
+        document.getElementById('heatDescription').setAttribute('data-i18n', heatData[currentSetIndex].descKey);
+        document.getElementById('heatDescription').textContent = translations[lang][heatData[currentSetIndex].descKey];
+
+        document.getElementById('waterImage').src = waterData[currentSetIndex].image;
+        document.getElementById('waterDescription').setAttribute('data-i18n', waterData[currentSetIndex].descKey);
+        document.getElementById('waterDescription').textContent = translations[lang][waterData[currentSetIndex].descKey];
+
+        document.getElementById('diseaseImage').src = diseaseData[currentSetIndex].image;
+        document.getElementById('diseaseDescription').setAttribute('data-i18n', diseaseData[currentSetIndex].descKey);
+        document.getElementById('diseaseDescription').textContent = translations[lang][diseaseData[currentSetIndex].descKey];
+      }
+
+      window.addEventListener('load', function() {
+        // Pick a random set index (0, 1, 2, etc.)
+        currentSetIndex = Math.floor(Math.random() * Math.min(heatData.length, waterData.length, diseaseData.length));
+        
+        // Wait for language manager to initialize
+        setTimeout(() => {
+          updateAnalysisCards();
+          // Fetch weather data
+          fetchWeatherData();
+        }, 100);
+      });
+
+      // Weather API Configuration - Open-Meteo (No API key needed!)
+      const MUMBAI_LAT = 19.0760;
+      const MUMBAI_LON = 72.8777;
+
+      // Weather icon mapping based on WMO weather codes
+      function getWeatherIcon(weatherCode) {
+        // WMO Weather interpretation codes
+        if (weatherCode === 0) return 'fa-sun'; // Clear sky
+        if (weatherCode <= 3) return 'fa-cloud-sun'; // Partly cloudy
+        if (weatherCode <= 48) return 'fa-smog'; // Fog
+        if (weatherCode <= 67) return 'fa-cloud-rain'; // Rain
+        if (weatherCode <= 77) return 'fa-snowflake'; // Snow
+        if (weatherCode <= 82) return 'fa-cloud-showers-heavy'; // Rain showers
+        if (weatherCode <= 86) return 'fa-cloud-meatball'; // Snow showers
+        if (weatherCode >= 95) return 'fa-cloud-bolt'; // Thunderstorm
+        return 'fa-cloud';
+      }
+
+      // Get day name
+      function getDayName(dateStr, index) {
+        const date = new Date(dateStr);
+        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const dayName = days[date.getDay()];
+        
+        if (index === 0) return `Today – ${dayName}`;
+        if (index === 1) return `Tomorrow – ${dayName}`;
+        return dayName;
+      }
+
+      // Fetch weather data from Open-Meteo
+      async function fetchWeatherData() {
+        try {
+          console.log('Fetching weather data from Open-Meteo for Mumbai...');
+          
+          // Open-Meteo API - FREE, no API key required!
+          const url = `https://api.open-meteo.com/v1/forecast?latitude=${MUMBAI_LAT}&longitude=${MUMBAI_LON}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,windspeed_10m_max,relative_humidity_2m_max,weathercode&timezone=Asia/Kolkata&forecast_days=3`;
+          
+          const response = await fetch(url);
+          
+          if (!response.ok) {
+            throw new Error(`Weather data unavailable: ${response.statusText}`);
+          }
+          
+          const data = await response.json();
+          console.log('Weather data received from Open-Meteo:', data);
+
+          // Update UI for each day
+          for (let i = 0; i < 3; i++) {
+            const card = document.getElementById(`day${i}`);
+            const dayName = getDayName(data.daily.time[i], i);
+            const tempMax = Math.round(data.daily.temperature_2m_max[i]);
+            const tempMin = Math.round(data.daily.temperature_2m_min[i]);
+            const humidity = data.daily.relative_humidity_2m_max[i];
+            const windSpeed = Math.round(data.daily.windspeed_10m_max[i]);
+            const rainProb = data.daily.precipitation_probability_max[i] || 0;
+            const weatherCode = data.daily.weathercode[i];
+            const iconClass = getWeatherIcon(weatherCode);
+
+            card.querySelector('.weather-day-name').textContent = dayName;
+            card.querySelector('.weather-icon').className = `weather-icon fas ${iconClass}`;
+            card.querySelector('.temp-high').textContent = `${tempMax}°C`;
+            card.querySelector('.temp-low').textContent = `${tempMin}°C`;
+            card.querySelector('.weather-details').innerHTML = `
+              <p><i class="fas fa-droplet"></i> Humidity: ${humidity}%</p>
+              <p><i class="fas fa-cloud-rain"></i> Rain: ${rainProb}%</p>
+              <p><i class="fas fa-wind"></i> Wind: ${windSpeed} km/h</p>
+            `;
+          }
+
+          // Update last updated time
+          const now = new Date();
+          const formattedTime = now.toLocaleString('en-IN', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false
+          });
+          document.getElementById('lastUpdated').textContent = `Last Updated: ${formattedTime}`;
+
+          // Store in localStorage with timestamp
+          localStorage.setItem('weatherData', JSON.stringify({
+            data: data.daily,
+            timestamp: Date.now()
+          }));
+
+        } catch (error) {
+          console.error('Error fetching weather:', error);
+          console.error('Error details:', error.message);
+          showWeatherError(error.message);
+        }
+      }
+
+      function showWeatherError(message) {
+        document.querySelectorAll('.weather-card').forEach(card => {
+          card.querySelector('.weather-day-name').textContent = 'Unavailable';
+          card.querySelector('.weather-icon').className = 'weather-icon fas fa-exclamation-triangle';
+        });
+        document.getElementById('lastUpdated').textContent = `Unable to refresh live data${message ? ': ' + message : ''}`;
+      }
+
+      // Mock weather data fallback
+      function useMockWeatherData() {
+        const mockData = [
+          {
+            day: 'Today – Sun',
+            icon: 'fa-cloud-sun',
+            tempHigh: 32,
+            tempLow: 24,
+            humidity: 68,
+            rain: 20,
+            wind: 15
+          },
+          {
+            day: 'Tomorrow – Mon',
+            icon: 'fa-sun',
+            tempHigh: 33,
+            tempLow: 25,
+            humidity: 65,
+            rain: 10,
+            wind: 12
+          },
+          {
+            day: 'Tue',
+            icon: 'fa-cloud-rain',
+            tempHigh: 30,
+            tempLow: 23,
+            humidity: 75,
+            rain: 60,
+            wind: 18
+          }
+        ];
+
+        mockData.forEach((data, index) => {
+          const card = document.getElementById(`day${index}`);
+          card.querySelector('.weather-day-name').textContent = data.day;
+          card.querySelector('.weather-icon').className = `weather-icon fas ${data.icon}`;
+          card.querySelector('.temp-high').textContent = `${data.tempHigh}°C`;
+          card.querySelector('.temp-low').textContent = `${data.tempLow}°C`;
+          card.querySelector('.weather-details').innerHTML = `
+            <p><i class="fas fa-droplet"></i> Humidity: ${data.humidity}%</p>
+            <p><i class="fas fa-cloud-rain"></i> Rain: ${data.rain}%</p>
+            <p><i class="fas fa-wind"></i> Wind: ${data.wind} km/h</p>
+          `;
+        });
+
+        const now = new Date();
+        const formattedTime = now.toLocaleString('en-IN', {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false
+        });
+        document.getElementById('lastUpdated').textContent = `Sample Data (API key needs activation) - ${formattedTime}`;
+      }
+
+      // Auto-refresh every 12 hours
+      setInterval(fetchWeatherData, 12 * 60 * 60 * 1000);
+    </script>
+  </body>
+</html>

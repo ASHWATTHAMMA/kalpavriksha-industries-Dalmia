@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google" content="notranslate" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="assets/images/favicon.png?v=1">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/product-style.css" />
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/language.js"></script>
+    <script src="assets/js/language-selector-loader.js"></script>
+    <title>Kalpavriksha Dashboard Login</title>
+  </head>
+
+  <body>
+    <div class="container" id="container">
+      <div class="form-container sign-in">
+        <form>
+          <div class="logo">
+            <img src="assets/images/logo.png" alt="Kalpavriksha Logo" class="logo-img" />
+            <h2>Kalpavriksha</h2>
+          </div>
+          <h1 data-i18n="loginTitle">Kalpavriksha Dashboard Login</h1>
+          <p class="sub-header" data-i18n="loginSubHeader">Monitor your systems with real-time data</p>
+          <div class="input-group">
+            <input type="text" id="uniqueCode" data-i18n="uniqueCodePlaceholder" placeholder="Enter Unique Code" />
+            <span class="tooltip-wrapper">
+              <i class="fa-solid fa-circle-info info-icon"></i>
+              <span class="tooltip-content" data-i18n="uniqueCodeTooltip">
+                Enter your client access key provided by your administrator
+              </span>
+            </span>
+          </div>
+          <select id="productSelect">
+            <option value="" disabled selected data-i18n="selectProduct">Select Product</option>
+            <option value="Kalpavriksha-soil" data-i18n="productSoil">Kalpavriksha  Soil Quality Sensor</option>
+            <option value="smart-drip" data-i18n="productDrip">Smart Drip Irrigation Mechanism</option>
+            <option value="Kalpavriksha-drone" data-i18n="productDrone">Kalpavriksha Agricultural Drone</option>
+          </select>
+          <div class="error-message" id="errorMessage"></div>
+          <button type="submit" data-i18n="accessDashboard">Access Dashboard</button>
+          <a href="#" class="help-link" data-i18n="helpLink">Lost Product ID? Contact Support</a>
+        </form>
+      </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

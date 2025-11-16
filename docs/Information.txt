@@ -1,0 +1,11 @@
+Soil quality sensor 
+1) type of soil(alluvial,black,red,laterite soils)
+2) ph value of soil
+3) nutrients present 
+
+Advance drip irrigation 
+1)moisture percentage in soil 
+
+Verdant drone
+1) wheather forecast shown on app
+2) type of plant and it's information
