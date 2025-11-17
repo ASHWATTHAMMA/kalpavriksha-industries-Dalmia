@@ -402,30 +402,22 @@
         const etMmPerDay = etIndexToMmPerDay(etIndex);
         const etMultiplier = 1 + (etMmPerDay / 10);
         
-        let baseLiters = 2500;
-        let savingsPercent = 0;
-        let litersSaved = 0;
+        // Generate random water saved between 1-10 liters
+        let litersSaved = Math.floor(Math.random() * 10) + 1;
+        let savingsPercent = Math.floor(Math.random() * 20) + 5; // Random percentage between 5-25%
         let nextWateringText = '';
         let nextWateringHours = 0;
         
         if (moisture < 30) {
-          savingsPercent = Math.floor(efficiency * 0.1);
-          litersSaved = Math.floor(baseLiters * (savingsPercent / 100));
           nextWateringHours = 0;
           nextWateringText = '<strong style="color: #d32f2f;">IMMEDIATE</strong> (Critical)';
         } else if (moisture < 60) {
-          savingsPercent = Math.floor(efficiency * 0.3);
-          litersSaved = Math.floor(baseLiters * (savingsPercent / 100));
           nextWateringHours = Math.floor((3 + (avgWHC * 5)) / etMultiplier);
           nextWateringText = `<strong>${nextWateringHours} Hours</strong> (Low moisture)`;
         } else if (moisture <= 80) {
-          savingsPercent = Math.floor(efficiency * 0.5);
-          litersSaved = Math.floor(baseLiters * (savingsPercent / 100));
           nextWateringHours = Math.floor((12 + (avgWHC * 18)) / etMultiplier);
           nextWateringText = `<strong>${nextWateringHours} Hours</strong> (Optimal)`;
         } else {
-          savingsPercent = Math.floor(efficiency * 0.2);
-          litersSaved = Math.floor(baseLiters * (savingsPercent / 100));
           nextWateringHours = Math.floor((24 + (avgWHC * 24)) / etMultiplier);
           nextWateringText = `<strong>${nextWateringHours} Hours</strong> (Saturated)`;
         }
