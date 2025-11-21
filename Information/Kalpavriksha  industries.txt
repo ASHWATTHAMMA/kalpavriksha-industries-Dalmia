@@ -1,0 +1,285 @@
+🌿 Kalpavriksha Industries Pvt Ltd
+Complete Company & Website Information
+
+═══════════════════════════════════════════════════════════════
+
+📌 COMPANY OVERVIEW
+
+Company Name: Kalpavriksha Industries Pvt Ltd
+Founded: 3rd January 2025
+Industry: Agricultural Technology (AgriTech)
+Headquarters: 419, Sector D, Sushant Gold City, Delhi-110092, India
+
+Mission: To make farming smarter, simpler, and more sustainable through AI-powered precision agriculture tools.
+
+═══════════════════════════════════════════════════════════════
+
+🌳 COMPANY NAME MEANING
+
+The name "Kalpavriksha" originates from the Sanskrit word "Kalpavṛkṣa", meaning a wish-fulfilling divine tree. In ancient Indian mythology, it symbolizes:
+- A source of abundance, prosperity, and fulfillment
+- Granting every sincere wish
+- Limitless potential and benevolent creation
+- The harmony between nature and innovation
+
+═══════════════════════════════════════════════════════════════
+
+🌐 WEBSITE OVERVIEW
+
+Website URL: https://kalpavriksha.com (or your actual domain)
+Design Philosophy: Modern, clean, and farmer-friendly interface with vibrant agricultural imagery
+
+Key Features:
+✅ Multi-language support (English, Hindi, Telugu, Kannada)
+✅ Interactive 3D product models
+✅ Responsive design (mobile, tablet, desktop)
+✅ Real-time language switching
+✅ Contact forms and demo requests
+✅ Secure sign-in portal
+
+═══════════════════════════════════════════════════════════════
+
+📄 WEBSITE PAGES
+
+1. HOME PAGE (index.html)
+   - Hero section with company tagline
+   - About Us preview
+   - Data monitoring showcase (Light, Soil, Growth, Water)
+   - Flagship products overview
+   - Call-to-action buttons
+
+2. ABOUT US PAGE (about.html)
+   - Company history and founding story
+   - Vision and mission statements
+   - Innovation philosophy
+   - The Kalpavriksha Promise
+   - Team values and farmer-first approach
+
+3. PRODUCTS PAGE (products.html)
+   - Interactive 3D models for all products
+   - Detailed product specifications
+   - Key features with icons
+   - Pricing options (Home Kit & Pro Kit)
+   - Add to Cart and Request Demo buttons
+
+4. CONTACT US PAGE (contact.html)
+   - Contact form (Name, Email, Subject, Message)
+   - Office address and map
+   - Phone numbers (Sales & Technical Support)
+   - Email addresses
+   - Social media links
+
+5. SIGN IN PAGE (signin.html)
+   - User login portal
+   - Sign up option
+   - Social login integration
+   - Password recovery
+
+6. LEGAL PAGES
+   - Privacy Policy (privacy.html)
+   - Terms & Conditions (terms.html)
+
+═══════════════════════════════════════════════════════════════
+
+🛠️ OUR FOUR FLAGSHIP PRODUCTS
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1️⃣ KALPAVRIKSHA SMART SENSOR
+
+Description: Real-time AI-powered farm monitoring device that tracks soil health, humidity, light, and temperature — empowering farmers with intelligent, data-driven insights.
+
+Tagline: "Smarter Fields. Healthier Crops."
+
+Key Features:
+✓ Light Detection - Optimizes sunlight exposure
+✓ Soil Moisture - Prevents over-irrigation
+✓ Nutrient Monitoring - Ensures balanced soil
+✓ Wireless Connectivity - Syncs data to your phone
+
+Pricing:
+- Home Kit: ₹3,499 (for small gardens)
+- Pro Kit: ₹7,999 (for farms up to 5 acres)
+
+3D Model: soil moisture sensor 3d model.glb
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+2️⃣ KALPAVRIKSHA SOIL QUALITY SENSOR
+
+Description: An advanced soil testing kit designed to measure pH levels, nutrient balance, and sunlight exposure. Helps farmers and gardeners assess soil quality instantly for smarter planting decisions.
+
+Tagline: "Know Your Soil. Grow with Confidence."
+
+Key Features:
+✓ pH Monitoring - Analyze soil acidity and alkalinity
+✓ Nutrient Index - Evaluate soil's fertility levels
+✓ Sunlight Detection - Track light intensity for ideal placement
+✓ Instant Readings - Accurate results in under 10 seconds
+
+Pricing:
+- Standard Kit: ₹2,999 (for home and garden use)
+- Professional Kit: ₹6,499 (for large-scale farms and institutions)
+
+3D Model: soil moisture sensor 3d model.glb
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+3️⃣ SMART DRIP IRRIGATION MECHANISM
+
+Description: An intelligent drip irrigation system that automatically detects dry zones and supplies precise amounts of water only where needed. Ensures optimal hydration while minimizing water waste.
+
+Tagline: "Every Drop Counts."
+
+Key Features:
+✓ Smart Moisture Detection - Identifies dry soil instantly
+✓ Targeted Drip Delivery - Prevents water wastage
+✓ Automated Control - Works autonomously with AI logic
+✓ Solar Powered - Efficient and sustainable operation
+
+Pricing:
+- Basic Kit: ₹4,999 (for gardens and small farms)
+- Pro Irrigation Setup: ₹9,999 (for medium to large fields)
+
+3D Model: drip irrigation sprinkler 3d model.glb
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+4️⃣ VERDANTRA AGRICULTURAL DRONE
+
+Description: A next-generation autonomous drone for real-time crop monitoring, disease detection, and precision spraying. Equipped with AI analysis to identify crop health issues and forecast yield efficiently.
+
+Tagline: "Your Farm's Eye in the Sky."
+
+Key Features:
+✓ Crop Scanning - Detect pests, dryness, and disease instantly
+✓ Weather Forecasting - Predict rainfall and temperature shifts
+✓ Smart AI Mapping - Suggests ideal soil and irrigation needs
+✓ Real-Time Alerts - Immediate insights via Verdantra mobile app
+
+Pricing:
+- Scout Drone: ₹29,999 (for small and mid-size farms)
+- Pro Drone: ₹59,999 (with advanced AI analytics and app sync)
+
+3D Model: agriculture drone.glb
+
+═══════════════════════════════════════════════════════════════
+
+📱 KALPAVRIKSHA AGRITECH APP
+
+Companion mobile application that integrates all Kalpavriksha products:
+- Real-time data monitoring
+- Push notifications and alerts
+- Historical data analysis
+- Weather forecasts
+- Crop health reports
+- Water usage tracking
+
+Available on: iOS and Android (Coming Soon)
+
+═══════════════════════════════════════════════════════════════
+
+🎨 WEBSITE TECHNICAL FEATURES
+
+Frontend Technologies:
+- HTML5 (Semantic markup)
+- CSS3 (Flexbox, Grid, Animations)
+- JavaScript ES6+ (Modern syntax)
+- Three.js (3D model rendering)
+
+3D Model Integration:
+- GLB format models
+- Interactive rotation and zoom
+- Auto-rotate feature
+- Touch and mouse controls
+- Professional lighting setup
+- Loading indicators
+
+Multi-Language System:
+- 4 languages supported
+- Dynamic content translation
+- LocalStorage persistence
+- Seamless language switching
+
+Responsive Design:
+- Mobile-first approach
+- Breakpoints: 480px, 768px, 900px, 1200px
+- Touch-friendly navigation
+- Optimized images
+
+═══════════════════════════════════════════════════════════════
+
+📞 CONTACT INFORMATION
+
+Head Office:
+419, Sector D, Sushant Gold City
+Delhi-110092, India
+
+Email:
+- General Inquiries: info@kalpvriksha.com
+- Sales: sales@kalpvriksha.com
+- Technical Support: support@kalpvriksha.com
+
+Phone:
+- Sales & General: +91 98765 43210
+- Technical Support: +91 98765 43211
+
+Social Media:
+- LinkedIn: linkedin.com/company/kalpavriksha-industries
+- Twitter: twitter.com/kalpavriksha
+- Facebook: facebook.com/kalpavriksha
+- YouTube: youtube.com/@kalpavriksha
+
+═══════════════════════════════════════════════════════════════
+
+🤝 PARTNERSHIPS & COLLABORATIONS
+
+- NABARD (National Bank for Agriculture and Rural Development)
+- Agricultural universities and research institutions
+- Farmer cooperatives across India
+- Government subsidy programs
+
+═══════════════════════════════════════════════════════════════
+
+🎯 TARGET AUDIENCE
+
+Primary:
+- Small to medium-scale farmers
+- Agricultural cooperatives
+- Home gardeners and hobbyists
+
+Secondary:
+- Large commercial farms
+- Agricultural institutions
+- Research organizations
+- Government agricultural departments
+
+═══════════════════════════════════════════════════════════════
+
+💚 COMPANY VALUES
+
+1. Farmer First - Every solution begins with farmer needs
+2. Innovation with Purpose - Technology that solves real problems
+3. Sustainability - Protecting the environment for future generations
+4. Accessibility - Affordable tools for all farmers
+5. Transparency - Honest communication and fair pricing
+6. Community - Growing together as a farming ecosystem
+
+═══════════════════════════════════════════════════════════════
+
+🚀 FUTURE ROADMAP
+
+- Expansion to more Indian states
+- International market entry
+- AI-powered crop disease prediction
+- Blockchain-based supply chain tracking
+- Farmer training programs
+- Mobile app launch
+- IoT sensor network expansion
+
+═══════════════════════════════════════════════════════════════
+
+Kalpavriksha Industries Pvt Ltd
+Smart Farming for a Greener Tomorrow 🌾
+
+Last Updated: January 2025

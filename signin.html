@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kalpavriksha Farmer Access Portal - AI Powered farming practice" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <title>Kalpavriksha Farmer Access</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #e2e2e2, #f4fcf7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.dropdown-lang {
+  position: fixed;
+  top: 22px;        /* Increased from 20px for more space from top edge */
+  right: 22px;      /* Increased from 20px for more space from right edge */
+  z-index: 1010;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.dropdown-btn {
+  background: linear-gradient(135deg, #3CB371, #2e8b57);
+  color: #fff;
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(60, 179, 113, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dropdown-btn:hover {
+  background: linear-gradient(135deg, #2e8b57, #27ae60);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(60, 179, 113, 0.4);
+}
+
+.dropdown-btn::before {
+  content: attr(title);
+  position: absolute;
+  bottom: -35px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  font-weight: 500;
+}
+.dropdown-btn:hover::before {
+  opacity: 1;
+}
+.dropdown-btn i {
+  font-size: 20px;
+}
+.dropdown-btn span {
+  display: none;
+}
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  min-width: 160px;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(60, 179, 113, 0.2);
+  overflow: hidden;
+  font-size: 15px;
+}
+.dropdown-item {
+  padding: 12px 18px;
+  cursor: pointer;
+  transition: background .18s, color .16s;
+  color: #222;
+  text-align: left;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.dropdown-item:hover, .dropdown-item.selected {
+  background: #e7f7ef;
+  color: #3CB371;
+  font-weight: 600;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .dropdown-lang {
+    top: 16px;
+    right: 16px;
+  }
+  .dropdown-btn {
+    width: 40px;
+    height: 40px;
+  }
+  .dropdown-btn i {
+    font-size: 18px;
+  }
+}
+@media (max-width: 480px) {
+  .dropdown-lang {
+    top: 10px;
+    right: 10px;
+  }
+  .dropdown-btn {
+    width: 36px;
+    height: 36px;
+  }
+  .dropdown-btn i {
+    font-size: 16px;
+  }
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+  display: flex;
+  flex-direction: row;
+  transition: box-shadow 0.3s;
+}
+
+/* Tablet and smaller laptops */
+@media (max-width: 900px) {
+  .container {
+    width: 95%;
+    min-height: unset;
+    border-radius: 20px;
+    padding: 0;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+    padding-top: 70px;
+  }
+  .container {
+    flex-direction: column;
+    width: 90%;
+    max-width: 90vw;
+    border-radius: 15px;
+    min-height: unset;
+    gap: 1rem;
+    margin: 0 auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  .toggle-container {
+    position: relative !important;
+    width: 100% !important;
+    left: 0 !important;
+    height: auto !important;
+    border-radius: 0 0 15px 15px !important;
+    transform: none !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .container.active .toggle-container {
+    transform: none !important;
+    border-radius: 0 0 15px 15px !important;
+  }
+  .toggle {
+    width: 100% !important;
+    border-radius: 0 0 15px 15px !important;
+    left: 0 !important;
+    height: auto !important;
+    min-height: 180px;
+    flex-direction: column !important;
+    transform: none !important;
+  }
+  .container.active .toggle {
+    transform: none !important;
+  }
+  .form-container {
+    position: relative !important;
+    width: 100% !important;
+    left: 0 !important;
+    top: 0 !important;
+    padding: 1.5rem !important;
+    transform: none !important;
+    height: auto !important;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    order: 1;
+  }
+  .container.active .sign-in {
+    transform: none !important;
+    display: none;
+  }
+  .container.active .sign-up {
+    transform: none !important;
+    display: block;
+  }
+  .sign-up {
+    display: none;
+  }
+  .toggle-container {
+    order: 2;
+  }
+  .toggle-panel {
+    position: relative !important;
+    width: 100% !important;
+    transform: none !important;
+    padding: 1.5rem !important;
+  }
+  .toggle-panel h1 {
+    font-size: 1.5rem;
+  }
+  .toggle-panel p {
+    font-size: 1rem;
+  }
+  .toggle-panel button {
+    margin-top: 15px;
+  }
+  .toggle-left {
+    display: none !important;
+  }
+  .toggle-right {
+    display: block !important;
+  }
+  .container.active .toggle-left {
+    transform: none !important;
+    display: block !important;
+  }
+  .container.active .toggle-right {
+    transform: none !important;
+    display: none !important;
+  }
+}
+
+/* Tablet devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    flex-direction: row;
+  }
+  .toggle-container {
+    width: 45% !important;
+  }
+}
+
+/* Very small mobile devices */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  .container {
+    width: 100%;
+    border-radius: 12px;
+  }
+  .form-container {
+    padding: 25px 15px !important;
+  }
+  .toggle-panel {
+    padding: 25px 15px !important;
+  }
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s;
+  flex: 1;
+  width: 50%;
+  min-width: 280px;
+  background: #fff;
+  z-index: 2;
+}
+.sign-in {
+  left: 0;
+}
+.sign-up {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.container.active .sign-in {
+  transform: translateX(100%);
+}
+.container.active .sign-up {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 3;
+  animation: move 0.6s;
+}
+@keyframes move {
+  0%, 49.99% { opacity: 0; z-index: 1; }
+  50%, 100% { opacity: 1; z-index: 3; }
+}
+form {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 45px 28px 48px 28px; /* Increased top and bottom padding */
+  height: 100%;
+  min-width: 220px;
+  gap: 2px;
+}
+form h1 {
+  font-size: 1.7rem;      /* Reduced for safety */
+  margin-top: 32px;       /* More space from top */
+  margin-bottom: 18px;    /* More space below */
+  line-height: 1.22;
+}
+.form-container form button {
+  margin-bottom: 32px;    /* More bottom margin for button */
+}
+@media (max-width: 768px) {
+  form {
+    padding: 25px 20px 30px 20px; /* Top, sides, bottom */
+  }
+  form h1 {
+    font-size: 1.2rem;
+    margin-top: 18px;
+    margin-bottom: 12px;
+  }
+  form button {
+    margin-bottom: 22px;
+  }
+}
+form label {
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+form input {
+  background: #eee;
+  border: none;
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  font-size: 15px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+  transition: box-shadow .2s;
+  min-height: 44px;
+}
+form input:focus {
+  box-shadow: 0 2px 8px rgba(60,179,113,0.13);
+}
+form span {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+.social-icons {
+  margin: 18px 0 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.social-icons a {
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: #3CB371;
+  font-size: 18px;
+  background: #f9f9f9;
+  transition: border-color 0.2s, color 0.2s;
+}
+.social-icons a:hover {
+  border-color: #3CB371;
+  color: #2e8b57;
+}
+
+.container p {
+  font-size: 15px;
+  margin: 18px 0 10px;
+  line-height: 24px;
+  color: #444;
+}
+
+.container a {
+  color: #3CB371;
+  font-size: 14px;
+  text-decoration: underline;
+  margin: 15px 0 10px;
+  cursor: pointer;
+  transition: color .2s;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.container a:hover { color: #2e8b57; }
+
+.container button,
+form button {
+  background-color: #3CB371;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: .45px;
+  text-transform: uppercase;
+  margin-top: 12px;
+  margin-bottom: 32px; /* Increased bottom margin for spacing */
+  cursor: pointer;
+  transition: background .3s, transform .2s;
+  outline: none;
+  min-height: 44px;
+}
+.container button:hover,
+form button:hover {
+  background: #2e8b57;
+  transform: translateY(-1px);
+}
+
+.container button.hidden {
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+.container button.hidden:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.toggle-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  transition: all 0.6s;
+  border-radius: 150px 0 0 100px;
+  z-index: 1000;
+  overflow: hidden;
+}
+.container.active .toggle-container {
+  transform: translateX(-100%);
+  border-radius: 0 150px 100px 0;
+}
+.toggle {
+  background: linear-gradient(to right, #2e8b57, #3CB371);
+  height: 100%;
+  width: 200%;
+  color: #fff;
+  position: relative;
+  left: -100%;
+  display: flex;
+  flex-direction: row;
+  transition: all 0.6s;
+}
+.container.active .toggle { transform: translateX(50%); }
+.toggle-panel {
+  position: absolute;
+  width: 50%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 45px 30px 45px 30px;
+  text-align: center;
+  top: 0;
+  transition: all 0.6s;
+}
+.toggle-panel h1 {
+  margin-bottom: 18px;
+  margin-top: 32px; /* Increased from 25px for more top space */
+}
+.toggle-panel p {
+  margin-bottom: 20px;
+}
+.toggle-panel button {
+  margin-top: 18px;
+  margin-bottom: 24px; /* Increased bottom margin */
+}
+.toggle-left { transform: translateX(-200%); }
+.container.active .toggle-left { transform: translateX(0); }
+.toggle-right { right: 0; transform: translateX(0); }
+.container.active .toggle-right { transform: translateX(200%); }
+
+#auth-message {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  min-width: 220px;
+  padding: 13px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 11px rgba(0,0,0,0.17);
+  z-index: 1001;
+  display: none;
+  background: #3CB371;
+  color: white;
+  font-size: 15px;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+#auth-message[aria-live] { font-weight: 600; }
+
+/* Mobile message positioning */
+@media (max-width: 768px) {
+  #auth-message {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    bottom: 20px;
+    min-width: 280px;
+    max-width: 90%;
+    text-align: center;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <!-- Compact Language Selector -->
+    <div class="dropdown-lang">
+      <button id="dropdownLangBtn" class="dropdown-btn" aria-haspopup="true" aria-expanded="false" title="Change Language">
+        <i class="fa-solid fa-globe"></i>
+        <span id="current-lang">English</span>
+      </button>
+      <div id="dropdownMenu" class="dropdown-menu" role="menu">
+        <div class="dropdown-item selected" data-lang="en" role="menuitem">English</div>
+        <div class="dropdown-item" data-lang="hi" role="menuitem">हिंदी</div>
+        <div class="dropdown-item" data-lang="te" role="menuitem">తెలుగు</div>
+        <div class="dropdown-item" data-lang="kn" role="menuitem">ಕನ್ನಡ</div>
+      </div>
+    </div>
+    <main>
+      <div class="container" id="container">
+        <!-- Sign Up Form -->
+        <div class="form-container sign-up" aria-labelledby="signup-title">
+          <form onsubmit="handleAuth(event, 'signup')" autocomplete="off">
+            <!-- <h1 id="signup-title">Create Account</h1> -->
+            <div class="social-icons" aria-label="Sign up with social accounts">
+              <a href="#" class="icon" title="Sign up with Google"><i class="fa-brands fa-google-plus-g"></i></a>
+              <a href="#" class="icon" title="Sign up with Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="icon" title="Sign up with GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="#" class="icon" title="Sign up with LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <span id="signup-or">Or use your email for registration</span>
+            <label for="signup-name" id="signup-name-label">Full Name</label>
+            <input id="signup-name" type="text" placeholder="Full Name" required autocomplete="name"/>
+            <label for="signup-email" id="signup-email-label">Email Address</label>
+            <input id="signup-email" type="email" placeholder="Email Address" required autocomplete="email"/>
+            <label for="signup-pass" id="signup-pass-label">Password</label>
+            <input id="signup-pass" type="password" placeholder="Password" required autocomplete="new-password"/>
+            <button type="submit" id="signup-btn">Sign Up</button>
+          </form>
+        </div>
+        <!-- Sign In Form -->
+        <div class="form-container sign-in" aria-labelledby="signin-title">
+          <form onsubmit="handleAuth(event, 'signin')" autocomplete="off">
+            <!-- <h1 id="signin-title">Sign In</h1> -->
+            <div class="social-icons" aria-label="Sign in with social accounts">
+              <a href="#" class="icon" title="Sign in with Google"><i class="fa-brands fa-google-plus-g"></i></a>
+              <a href="#" class="icon" title="Sign in with Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="icon" title="Sign in with GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="#" class="icon" title="Sign in with LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <span id="signin-or">Or use your email & password</span>
+            <label for="signin-email" id="signin-email-label">Email Address</label>
+            <input id="signin-email" type="email" placeholder="Email Address" required autocomplete="email"/>
+            <label for="signin-pass" id="signin-pass-label">Password</label>
+            <input id="signin-pass" type="password" placeholder="Password" required autocomplete="current-password"/>
+            <a href="#" tabindex="0" id="forgot-link">Forgot Your Password?</a>
+            <button type="submit" id="signin-btn">Sign In</button>
+          </form>
+        </div>
+        <!-- Toggle Panels -->
+        <div class="toggle-container">
+          <div class="toggle">
+            <div class="toggle-panel toggle-left">
+              <h1 id="toggle-left-title">Welcome Back!</h1>
+              <p id="toggle-left-desc">Enter your details to access your field and crop data.</p>
+              <button class="hidden" id="login" type="button" aria-label="Switch to Sign In">Sign In</button>
+            </div>
+            <div class="toggle-panel toggle-right">
+              <h1 id="toggle-right-title">Hello, Farmer!</h1>
+              <p id="toggle-right-desc">
+                Register with Kalpavriksha to start leveraging AI in your farming practice.
+              </p>
+              <button class="hidden" id="register" type="button" aria-label="Switch to Sign Up">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Status/message box -->
+      <div id="auth-message" aria-live="polite"></div>
+    </main>
+    <script>
+      // Translation dictionary
+      const LANGUAGES = {
+        en: {
+          name: "English",
+          signupTitle: "Create Account",
+          signUpBtn: "Sign Up",
+          signupOr: "Or use your email for registration",
+          signupName: "Full Name",
+          signupEmail: "Email Address",
+          signupPass: "Password",
+          signinTitle: "Sign In",
+          signInBtn: "Sign In",
+          signinOr: "Or use your email & password",
+          signinEmail: "Email Address",
+          signinPass: "Password",
+          forgot: "Forgot Your Password?",
+          toggleLeftTitle:"Welcome Back!",
+          toggleLeftDesc:"Enter your details to access your field and crop data.",
+          toggleRightTitle:"Hello, Farmer!",
+          toggleRightDesc:"Register with Kalpavriksha to start leveraging AI in your farming practice.",
+        },
+        hi: {
+          name: "हिंदी",
+          signupTitle: "खाता बनाएं",
+          signUpBtn: "साइन अप करें",
+          signupOr: "या ईमेल से रजिस्टर करें",
+          signupName: "पूरा नाम",
+          signupEmail: "ईमेल पता",
+          signupPass: "पासवर्ड",
+          signinTitle: "साइन इन करें",
+          signInBtn: "साइन इन करें",
+          signinOr: "या ईमेल और पासवर्ड का उपयोग करें",
+          signinEmail: "ईमेल पता",
+          signinPass: "पासवर्ड",
+          forgot: "पासवर्ड भूल गए?",
+          toggleLeftTitle:"वापसी पर स्वागत है!",
+          toggleLeftDesc:"कृपया अपने विवरण दर्ज करें।",
+          toggleRightTitle:"नमस्ते, किसान!",
+          toggleRightDesc:"Kalpavriksha से जुड़ें और AI का लाभ उठाएं।",
+        },
+        te: {
+          name: "తెలుగు",
+          signupTitle: "ఖాతా సృష్టించండి",
+          signUpBtn: "సైన్ అప్ చేయండి",
+          signupOr: "లేదా మీ ఇమెయిల్‌ను ఉపయోగించండి",
+          signupName: "పూర్తి పేరు",
+          signupEmail: "ఈమెయిల్ చిరునామా",
+          signupPass: "పాస్వర్డ్",
+          signinTitle: "సైన్ ఇన్ చేయండి",
+          signInBtn: "సైన్ ఇన్ చేయండి",
+          signinOr: "లేదా మీ ఇమెయిల్ & పాస్వర్డ్ ఉపయోగించండి",
+          signinEmail: "ఈమెయిల్ చిరునామా",
+          signinPass: "పాస్వర్డ్",
+          forgot: "మీ పాస్వర్డ్ మర్చిపోయారా?",
+          toggleLeftTitle:"మళ్లీ స్వాగతం!",
+          toggleLeftDesc:"దయచేసి వివరాలు నమోదు చేయండి.",
+          toggleRightTitle:"హలో, రైతు!",
+          toggleRightDesc:"Kalpavriksha లో చేరండి, AI ద్వారా వ్యవసాయాన్ని మెరుగుపర్చండి.",
+        },
+        kn: {
+          name: "ಕನ್ನಡ",
+          signupTitle: "ಖಾತೆ ಬಹುದಾಗಿ",
+          signUpBtn: "ಸೈನ್ ಅಪ್",
+          signupOr: "ಅಥವಾ ನಿಮ್ಮ ಇಮೇಲ್ ಬಳಸಿ ನೋಂದಣಿ ಮಾಡಿ",
+          signupName: "ಪೂರ್ಣ ಹೆಸರು",
+          signupEmail: "ಇಮೇಲ್ ವಿಳಾಸ",
+          signupPass: "ಗುಪ್ತಪದ",
+          signinTitle: "ಸೈನ್ ಇನ್",
+          signInBtn: "ಸೈನ್ ಇನ್",
+          signinOr: "ಅಥವಾ ಇಮೇಲ್ ಮತ್ತು ಗುಪ್ತಪದ ಬಳಸಿ",
+          signinEmail: "ಇಮೇಲ್ ವಿಳಾಸ",
+          signinPass: "ಗುಪ್ತಪದ",
+          forgot: "ಗುಪ್ತಪದ ಮರೆತಿದ್ದೀರಾ?",
+          toggleLeftTitle:"ಮರಿ ಸ್ವಾಗತ!",
+          toggleLeftDesc:"ದಯವಿಟ್ಟು ನಿಮ್ಮ ವಿವರಗಳನ್ನೂ ನಮೂದಿಸಿ.",
+          toggleRightTitle:"ಹಲೋ, ರೈತ!",
+          toggleRightDesc:"Kalpavriksha ಜೊತೆಗೆ AI खेती ಪ್ರಾರಂಭಿಸಿ.",
+        }
+      };
+
+      // Dropdown logic
+      const dropdownBtn = document.getElementById('dropdownLangBtn');
+      const dropdownMenu = document.getElementById('dropdownMenu');
+      const currentLangSpan = document.getElementById('current-lang');
+
+      dropdownBtn.addEventListener('click', function(e){
+        const expanded = dropdownMenu.style.display === 'flex';
+        dropdownMenu.style.display = expanded ? 'none' : 'flex';
+        dropdownBtn.setAttribute('aria-expanded', !expanded);
+      });
+
+      document.addEventListener('click',function(e){
+        if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)){
+          dropdownMenu.style.display = 'none';
+          dropdownBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      dropdownBtn.addEventListener('keydown', function(e){
+        if(e.key === 'ArrowDown' || e.key === 'Enter') {
+          dropdownMenu.style.display = 'flex';
+          dropdownBtn.setAttribute('aria-expanded', 'true');
+          dropdownMenu.querySelector('.dropdown-item.selected').focus();
+        }
+      });
+
+      dropdownMenu.querySelectorAll('.dropdown-item').forEach(item=>{
+        item.setAttribute('tabindex', '0');
+        item.addEventListener('click',function(){
+          dropdownMenu.querySelectorAll('.dropdown-item').forEach(it=>it.classList.remove('selected'));
+          item.classList.add('selected');
+          let langCode = item.getAttribute('data-lang');
+          currentLangSpan.textContent = LANGUAGES[langCode].name;
+          dropdownMenu.style.display = 'none';
+          dropdownBtn.setAttribute('aria-expanded', 'false');
+          switchLanguage(langCode);
+        });
+        item.addEventListener('keydown', function(e){
+          if(e.key === 'Enter'){
+            item.click();
+          }
+        });
+      });
+
+      function switchLanguage(lang) {
+        const dict = LANGUAGES[lang] || LANGUAGES['en'];
+        
+        // Helper function to safely update element
+        const updateElement = (id, text) => {
+          const el = document.getElementById(id);
+          if (el) el.textContent = text;
+        };
+        
+        // Update all elements with null checks
+        updateElement('signup-title', dict.signupTitle);
+        updateElement('signup-btn', dict.signUpBtn);
+        updateElement('signup-or', dict.signupOr);
+        updateElement('signup-name-label', dict.signupName);
+        updateElement('signup-email-label', dict.signupEmail);
+        updateElement('signup-pass-label', dict.signupPass);
+        updateElement('signin-title', dict.signinTitle);
+        updateElement('signin-btn', dict.signInBtn);
+        updateElement('signin-or', dict.signinOr);
+        updateElement('signin-email-label', dict.signinEmail);
+        updateElement('signin-pass-label', dict.signinPass);
+        updateElement('forgot-link', dict.forgot);
+        updateElement('toggle-left-title', dict.toggleLeftTitle);
+        updateElement('toggle-left-desc', dict.toggleLeftDesc);
+        updateElement('toggle-right-title', dict.toggleRightTitle);
+        updateElement('toggle-right-desc', dict.toggleRightDesc);
+      }
+
+      const container = document.getElementById("container");
+      const registerBtn = document.getElementById("register");
+      const loginBtn = document.getElementById("login");
+      const messageBox = document.getElementById("auth-message");
+
+      function showMessage(message, type) {
+        messageBox.style.display = 'block';
+        messageBox.style.opacity = '1';
+        messageBox.textContent = message;
+        if (type === 'success') messageBox.style.backgroundColor = '#2e8b57';
+        else if (type === 'error') messageBox.style.backgroundColor = '#c9302c';
+        else messageBox.style.backgroundColor = '#3CB371';
+        setTimeout(() => {
+          messageBox.style.opacity = '0';
+          setTimeout(() => { messageBox.style.display = 'none'; }, 320);
+        }, 2600);
+      }
+
+      registerBtn.addEventListener("click", () => {
+        container.classList.add("active");
+        showMessage("Switching to Sign Up...", "info");
+      });
+      loginBtn.addEventListener("click", () => {
+        container.classList.remove("active");
+        showMessage("Switching to Sign In...", "info");
+      });
+
+      window.handleAuth = function(event, type) {
+        event.preventDefault();
+        const form = event.target;
+        if(type==='signin') {
+          showMessage('Sign In attempted!', 'success');
+        } else {
+          showMessage('Registration attempted!', 'success');
+        }
+        form.reset();
+        setTimeout(function() {
+          window.location.href = "index.html"; // Change to your homepage file or URL
+        }, 1200);
+      };
+
+      [registerBtn,loginBtn].forEach(btn => {
+        btn.addEventListener('keyup', function(e){
+          if(e.key==='Enter') btn.click();
+        });
+      });
+
+      switchLanguage('en');
+    </script>
+  </body>
+</html>
