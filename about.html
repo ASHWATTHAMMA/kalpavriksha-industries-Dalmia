@@ -42,8 +42,19 @@
     </div>
 
     <div class="container about-container" style="margin-top:80px; display: flex; align-items: center;">
-      <div class="about-image" style="flex: 1;">
-        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449" alt="Farmer with agricultural sensor" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+      <div class="about-image" style="flex: 1; position: relative;">
+        <video id="journey-video" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" loop autoplay>
+          <source src="video/sniggonsh ad.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-controls" style="position: absolute; bottom: 15px; right: 15px; display: flex; gap: 10px; z-index: 10;">
+          <button id="play-pause-btn" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); color: white; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: all 0.3s ease; display: flex; justify-content: center; align-items: center; padding: 0;" title="Play/Pause">
+            <i class="fas fa-pause"></i>
+          </button>
+          <button id="mute-btn" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); color: white; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: all 0.3s ease; display: flex; justify-content: center; align-items: center; padding: 0;" title="Mute">
+            <i class="fas fa-volume-up"></i>
+          </button>
+        </div>
       </div>
       <div class="about-text" style="flex: 1; padding-left: 30px; max-width: 600px;">
         <h3 style="color: #3CB371; margin-bottom: 20px;" data-i18n="journey-title">Our Journey</h3>
@@ -91,5 +102,58 @@
   <div id="footer-placeholder"></div>
 
   <script src="js/script.js"></script>
+  
+  <!-- Video Controls Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('journey-video');
+      const playPauseBtn = document.getElementById('play-pause-btn');
+      const muteBtn = document.getElementById('mute-btn');
+      
+      if (!video || !playPauseBtn || !muteBtn) return;
+      
+      // Play/Pause functionality
+      playPauseBtn.addEventListener('click', function() {
+        if (video.paused) {
+          video.play();
+          playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+          playPauseBtn.title = 'Pause';
+        } else {
+          video.pause();
+          playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+          playPauseBtn.title = 'Play';
+        }
+      });
+      
+      // Mute/Unmute functionality
+      muteBtn.addEventListener('click', function() {
+        if (video.muted) {
+          video.muted = false;
+          muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+          muteBtn.title = 'Mute';
+        } else {
+          video.muted = true;
+          muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+          muteBtn.title = 'Unmute';
+        }
+      });
+      
+      // Hover effects for buttons (Glassmorphism style)
+      [playPauseBtn, muteBtn].forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+          this.style.background = 'rgba(60, 179, 113, 0.3)';
+          this.style.borderColor = 'rgba(60, 179, 113, 0.5)';
+          this.style.transform = 'scale(1.1)';
+          this.style.boxShadow = '0 6px 16px rgba(60, 179, 113, 0.3)';
+        });
+        btn.addEventListener('mouseleave', function() {
+          this.style.background = 'rgba(255, 255, 255, 0.1)';
+          this.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+          this.style.transform = 'scale(1)';
+          this.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
